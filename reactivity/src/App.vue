@@ -1,34 +1,39 @@
 <template>
 
-<div class="main-container">
-  <h1 class="lol">Your mom</h1>
+<div id="container" class="main-container">
+  <div class="logo">
+    <img v-bind:src="image">
+  </div>
+
 </div>
 
 
 </template>
 
 <script>
-console.log("hello world");
+
+
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 *{
   font-size: 62.5%;
   box-sizing: border-box;
-}
-
-.body {
+  font-family: 'Roboto', sans-serif;
   padding: 0;
   margin: 0;
 }
 
 .main-container {
-  background-color: red;
+  background-color: lightblue;
 }
 
-.lol {
-  font-size: 10rem;
+.main-title {
+  font-size: 4rem;
+  padding: 1rem;
+  margin: 0;
 }
 
 </style>
