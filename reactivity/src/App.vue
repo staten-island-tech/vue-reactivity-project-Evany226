@@ -2,14 +2,16 @@
   <div id="app">
     <nav class="navbar">
       <img class="logo" src="./assets/totally not amazon.jpg">
-      <div class="shopping-cart">
-        <img class="shopping-cart-icon" src="./assets/shopping cart.png">
+      <div class="cart-button">
+        <img class="cart-button-icon" src="./assets/shopping cart.png">
       </div>
     </nav>
 
     <div class="item-container">
       <div class="shopping-container">
-        <div class="shopping-card"></div>
+        <div class="shopping-card" :key="products.productId">
+          <img :src="productImage">
+        </div>
         <div class="shopping-card"></div>
         <div class="shopping-card"></div>
       </div>
@@ -41,9 +43,42 @@ export default {
   },
   data() {
     return {
-      products: ["Keyboard", "Monitor", "Smartphones", "Jeans", "T-Shirts", "Sweater", "Jacket", "Sneakers", "Sweatpants"]
+      products: ["Keyboards", "Monitors", "Smartphones", "Jeans", "T-Shirts", "Sweater", "Jacket", "Sneakers", "Sweatpants"],
+      images: ["./assets/keyboard.jpg", "./assets.monitor.jpg", "./assets/smartphone.jpg"]
   }
-  }
+  },
+  products: [
+    {
+      productId: 1,
+      productName: 'Keyboards',
+      productImage: "./assets/keyboard.jpg",
+    },
+    {
+      productId: 2,
+      productName: 'Monitors',
+      productImage: "./assets/monitor.jfif",
+    },
+    {
+      productId: 3,
+      productName: 'Smartphones',
+      productImage: "./assets/smartphone.jpg",
+    },
+    {
+      productId: 4,
+      productName: 'Jeans',
+      productImage: "./assets/jeans.jpg",
+    },
+    {
+      productId: 5,
+      productName: 'T-shirts',
+      productImage: "./assets/t-shirt.jpg",
+    },
+    {
+      productId: 6,
+      productName: 'Sneakers',
+      productImage: "./assets/keyboard.jpg",
+    },
+  ]
 }
 
 </script>
@@ -91,9 +126,15 @@ body{
   justify-content: space-evenly;
 }
 
-.shopping-cart-icon {
-  width: 5rem;
+.cart-button {
+  margin-right: 2rem;
+
 }
+
+.cart-button-icon {
+  width: 5rem;
+  }
+
 
 
 
