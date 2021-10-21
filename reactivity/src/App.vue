@@ -9,20 +9,13 @@
 
     <div class="item-container">
       <div class="shopping-container">
-        <div class="shopping-card" :key="products.productId">
-          <img :src="productImage">
-        </div>
-        <div class="shopping-card"></div>
-        <div class="shopping-card"></div>
+        <div v-for="tech in technology" :key="tech.productId" class="shopping-card">
+          <img class="shopping-image" v-bind:src="tech.productImage">
+        </div>  
       </div>
 
-
-<!-- <div v-for="product in products" :key="product" class="shopping-card"></div> -->
-      
       <div class="shopping-container">
-        <div class="shopping-card"></div>
-        <div class="shopping-card"></div>
-        <div class="shopping-card"></div>
+        <div v-for="clothes in clothing" :key="clothes.productId" class="shopping-card"></div>  
       </div>
 
       <div class="shopping-container">
@@ -43,17 +36,14 @@ export default {
   },
   data() {
     return {
-      products: ["Keyboards", "Monitors", "Smartphones", "Jeans", "T-Shirts", "Sweater", "Jacket", "Sneakers", "Sweatpants"],
-      images: ["./assets/keyboard.jpg", "./assets.monitor.jpg", "./assets/smartphone.jpg"]
-  }
-  },
-  products: [
-    {
+
+    technology: [
+      {
       productId: 1,
       productName: 'Keyboards',
       productImage: "./assets/keyboard.jpg",
-    },
-    {
+      },
+          {
       productId: 2,
       productName: 'Monitors',
       productImage: "./assets/monitor.jfif",
@@ -63,6 +53,9 @@ export default {
       productName: 'Smartphones',
       productImage: "./assets/smartphone.jpg",
     },
+    ],
+
+    clothing: [
     {
       productId: 4,
       productName: 'Jeans',
@@ -76,9 +69,32 @@ export default {
     {
       productId: 6,
       productName: 'Sneakers',
+      productImage: "./assets/sneakers.jpg",
+    },
+    ],
+
+    moreClothing: [
+    {
+      productId: 7,
+      productName: 'Sweater',
+      productImage: "./assets/jeans.jpg",
+    },
+    {
+      productId: 8,
+      productName: 'Jacket',
+      productImage: "./assets/t-shirt.jpg",
+    },
+    {
+      productId: 9,
+      productName: 'Sweatpants',
       productImage: "./assets/keyboard.jpg",
     },
-  ]
+    ]
+
+
+  }
+  },
+  
 }
 
 </script>
@@ -134,6 +150,12 @@ body{
 .cart-button-icon {
   width: 5rem;
   }
+
+.shopping-image {
+  width: 100%;
+  height: 100%;
+};
+
 
 
 
