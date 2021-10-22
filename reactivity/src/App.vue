@@ -9,20 +9,25 @@
 
     <div class="item-container">
       <div class="shopping-container">
-        <div v-for="tech in technology" :key="tech.productId" class="shopping-card">
-          <img class="shopping-image" v-bind:src="tech.productImage">
+       <div v-for="tech in technology" :key="tech.productId" class="shopping-card"> 
+          <img class="shopping-image" :src="tech.productImage"> 
+          <h2 class="shopping-title"> {{tech.productName}} </h2>
+        </div>
+      </div>
+
+      <div class="shopping-container">
+        <div v-for="clothes in clothing" :key="clothes.productId" class="shopping-card">
+          <img class="shopping-image" :src="clothes.productImage"> 
+          <h2 class="shopping-title"> {{clothes.productName}} </h2>
         </div>  
       </div>
 
       <div class="shopping-container">
-        <div v-for="clothes in clothing" :key="clothes.productId" class="shopping-card"></div>  
+        <div v-for="clothes in moreClothing" :key="clothes.productId" class="shopping-card">
+          <img class="shopping-image" :src="clothes.productImage"> 
+          <h2 class="shopping-title"> {{clothes.productName}} </h2>
+        </div>  
       </div>
-
-      <div class="shopping-container">
-        <div class="shopping-card"></div>
-        <div class="shopping-card"></div>
-        <div class="shopping-card"></div>
-      </div> 
     </div> 
 
   </div>
@@ -41,17 +46,17 @@ export default {
       {
       productId: 1,
       productName: 'Keyboards',
-      productImage: "./assets/keyboard.jpg",
+      productImage: "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80",
       },
-          {
+      {
       productId: 2,
       productName: 'Monitors',
-      productImage: "./assets/monitor.jfif",
+      productImage: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
     },
     {
       productId: 3,
       productName: 'Smartphones',
-      productImage: "./assets/smartphone.jpg",
+      productImage: "https://images.unsplash.com/photo-1530319067432-f2a729c03db5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1089&q=80",
     },
     ],
 
@@ -59,17 +64,17 @@ export default {
     {
       productId: 4,
       productName: 'Jeans',
-      productImage: "./assets/jeans.jpg",
+      productImage: "https://images.unsplash.com/photo-1624378440847-4a64ee1a889d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1464&q=80",
     },
     {
       productId: 5,
       productName: 'T-shirts',
-      productImage: "./assets/t-shirt.jpg",
+      productImage: "https://images.unsplash.com/photo-1620799139507-2a76f79a2f4d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1072&q=80",
     },
     {
       productId: 6,
       productName: 'Sneakers',
-      productImage: "./assets/sneakers.jpg",
+      productImage: "https://images.unsplash.com/photo-1552346154-21d32810aba3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80",
     },
     ],
 
@@ -77,21 +82,19 @@ export default {
     {
       productId: 7,
       productName: 'Sweater',
-      productImage: "./assets/jeans.jpg",
+      productImage: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1072&q=80",
     },
     {
       productId: 8,
-      productName: 'Jacket',
-      productImage: "./assets/t-shirt.jpg",
+      productName: 'Dress Shirt',
+      productImage: "https://images.unsplash.com/photo-1603251578711-3290ca1a0187?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80",
     },
     {
       productId: 9,
       productName: 'Sweatpants',
-      productImage: "./assets/keyboard.jpg",
+      productImage: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80",
     },
     ]
-
-
   }
   },
   
@@ -140,6 +143,7 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  text-align: center;
 }
 
 .cart-button {
@@ -156,9 +160,9 @@ body{
   height: 100%;
 };
 
-
-
-
+.shopping-title {
+  font-size: 5rem;
+}
 
 
 </style>
