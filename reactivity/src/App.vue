@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <nav class="navbar">
-      <img class="logo" src="./assets/totally not amazon.jpg">
+      <img class="logo" src="./assets/totally not amazon dark logo.jpg">
       <div class="cart-button">
-        <img class="cart-button-icon" src="./assets/shopping cart.png">
+        <i class="fas fa-shopping-cart"></i>
       </div>
     </nav>
 
@@ -11,21 +11,21 @@
       <div class="shopping-container">
        <div v-for="tech in technology" :key="tech.productId" class="shopping-card"> 
           <img class="shopping-image" :src="tech.productImage"> 
-          <h2 class="shopping-title"> {{tech.productName}} </h2>
+          <h2 class="shopping-name"> {{tech.productName}} </h2>
         </div>
       </div>
 
       <div class="shopping-container">
         <div v-for="clothes in clothing" :key="clothes.productId" class="shopping-card">
           <img class="shopping-image" :src="clothes.productImage"> 
-          <h2 class="shopping-title"> {{clothes.productName}} </h2>
+          <h2 class="shopping-name"> {{clothes.productName}} </h2>
         </div>  
       </div>
 
       <div class="shopping-container">
         <div v-for="clothes in moreClothing" :key="clothes.productId" class="shopping-card">
           <img class="shopping-image" :src="clothes.productImage"> 
-          <h2 class="shopping-title"> {{clothes.productName}} </h2>
+          <h2 :style="{fontSize: 10}" class="shopping-name"> {{clothes.productName}} </h2>
         </div>  
       </div>
     </div> 
@@ -105,7 +105,7 @@ export default {
 <style>
 
 * {
-  font-size: 62.5%;
+    font-size: 62.5%;
   box-sizing: border-box;
 }
 
@@ -116,11 +116,10 @@ body{
 
 .logo {
   width: 16rem;
-  padding: 1rem;
 }
 
 .navbar {
-  background-color: orange;
+  background-color: #0F1111;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -160,8 +159,13 @@ body{
   height: 100%;
 };
 
-.shopping-title {
+.shopping-name {
   font-size: 5rem;
+}
+
+.fa-shopping-cart {
+  font-size: 4rem;
+  color: white;
 }
 
 
