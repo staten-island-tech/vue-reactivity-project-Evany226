@@ -11,21 +11,21 @@
       <div class="shopping-container">
        <div v-for="tech in technology" :key="tech.productId" class="shopping-card"> 
           <img class="shopping-image" :src="tech.productImage"> 
-          <h2 class="shopping-name"> {{tech.productName}} </h2>
+          <p class="shopping-name"> {{tech.productName}} </p>
         </div>
       </div>
 
       <div class="shopping-container">
         <div v-for="clothes in clothing" :key="clothes.productId" class="shopping-card">
           <img class="shopping-image" :src="clothes.productImage"> 
-          <h2 class="shopping-name"> {{clothes.productName}} </h2>
+          <p class="shopping-name"> {{clothes.productName}} </p>
         </div>  
       </div>
 
       <div class="shopping-container">
         <div v-for="clothes in moreClothing" :key="clothes.productId" class="shopping-card">
           <img class="shopping-image" :src="clothes.productImage"> 
-          <h2 :style="{fontSize: 10}" class="shopping-name"> {{clothes.productName}} </h2>
+          <p class="shopping-name"  > {{clothes.productName}} </p>
         </div>  
       </div>
     </div> 
@@ -100,13 +100,16 @@ export default {
   
 }
 
+
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 
 * {
-    font-size: 62.5%;
+  font-size: 62.5%;
   box-sizing: border-box;
+  outline: solid 1px red;
 }
 
 body{
@@ -115,7 +118,7 @@ body{
 }
 
 .logo {
-  width: 16rem;
+  width: 14rem;
 }
 
 .navbar {
@@ -123,6 +126,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .shopping-card {
@@ -147,25 +151,22 @@ body{
 
 .cart-button {
   margin-right: 2rem;
-
 }
-
-.cart-button-icon {
-  width: 5rem;
-  }
 
 .shopping-image {
   width: 100%;
   height: 100%;
-};
-
-.shopping-name {
-  font-size: 5rem;
 }
 
 .fa-shopping-cart {
-  font-size: 4rem;
+  font-size: 3rem;
   color: white;
+}
+
+.shopping-name {
+  margin: 1rem 0rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.5rem;
 }
 
 
