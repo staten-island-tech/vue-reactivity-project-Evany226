@@ -4,6 +4,12 @@
       <img class="logo" src="./assets/totally not amazon dark logo.jpg">
       <div class="cart-button">
         <i class="fas fa-shopping-cart"></i>
+        <ul id=dropDown class="shopping-list"> 
+              <li id="list-title">Shopping List</li>
+              <li>Link 1</li>
+              <li>Link 2</li>
+              <li>Link 2</li>
+        </ul>
       </div>
     </nav>
 
@@ -91,7 +97,7 @@ export default {
     },
     {
       productId: 9,
-      productName: 'Sweatpants',
+      productName: 'Denim Shorts',
       productImage: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80",
     },
     ]
@@ -106,16 +112,18 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 
+
+
 * {
   font-size: 62.5%;
   box-sizing: border-box;
-  outline: solid 1px red;
 }
 
 body{
   padding: 0;
   margin: 0;
 }
+
 
 .logo {
   width: 14rem;
@@ -126,7 +134,6 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  overflow: hidden;
 }
 
 .shopping-card {
@@ -138,8 +145,9 @@ body{
 .item-container {
   display: flex;
   height: 120vh;
-  width: 100vw;
+  width: 100%;
   justify-content: space-evenly;
+
 }
 
 .shopping-container {
@@ -147,15 +155,14 @@ body{
   flex-direction: column;
   justify-content: space-evenly;
   text-align: center;
+
 }
 
-.cart-button {
-  margin-right: 2rem;
-}
 
 .shopping-image {
   width: 100%;
   height: 100%;
+
 }
 
 .fa-shopping-cart {
@@ -167,6 +174,36 @@ body{
   margin: 1rem 0rem;
   font-family: 'Roboto', sans-serif;
   font-size: 2.5rem;
+}
+
+.cart-button {
+  margin-right: 2rem;
+  position: relative;
+}
+
+.shopping-list {
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 25rem;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: 0.1rem;
+  margin-top: 1rem;
+}
+
+
+.shopping-list li {
+  color: black;
+  padding: 1rem 0rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+}
+
+#list-title {
+  color: black;
+  font-weight: bold;
 }
 
 
