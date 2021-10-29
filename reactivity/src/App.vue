@@ -3,7 +3,7 @@
     <nav class="navbar">
       <img class="logo" src="./assets/totally not amazon dark logo.jpg">
       <div class="cart-button">
-        <i class="fas fa-shopping-cart"></i>
+          <i class="fas fa-shopping-cart" v-on:click="myFilter" ></i>
         <ul id=dropDown class="shopping-list"> 
               <li id="list-title">Shopping List</li>
               <li>Link 1</li>
@@ -100,10 +100,16 @@ export default {
       productName: 'Denim Shorts',
       productImage: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80",
     },
-    ]
+    ],
+    isActive: false
   }
   },
-  
+  methods: {
+    toggleList: function(event) { 
+      let button = event.target
+      button.classList.toggle("show");
+    }
+  }
 }
 
 
@@ -182,6 +188,7 @@ body{
 }
 
 .shopping-list {
+  display: none;
   position: absolute;
   background-color: #f1f1f1;
   min-width: 25rem;
@@ -205,6 +212,8 @@ body{
   color: black;
   font-weight: bold;
 }
+
+.show {display:block;}
 
 
 </style>
