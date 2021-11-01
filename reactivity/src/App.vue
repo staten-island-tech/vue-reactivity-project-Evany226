@@ -3,12 +3,10 @@
     <nav class="navbar">
       <img class="logo" src="./assets/totally not amazon dark logo.jpg">
       <div class="cart-button">
-          <i class="fas fa-shopping-cart" v-on:click="myFilter" ></i>
-        <ul id=dropDown class="shopping-list"> 
+          <i class="fas fa-shopping-cart" @click="toggle"></i>
+        <ul class="shopping-list" v-if="active"> 
               <li id="list-title">Shopping List</li>
-              <li>Link 1</li>
-              <li>Link 2</li>
-              <li>Link 2</li>
+              <li v-for="shop in shoppingItems" :key="shop.shoppingItems">Link 1</li>
         </ul>
       </div>
     </nav>
@@ -18,6 +16,7 @@
        <div v-for="tech in technology" :key="tech.productId" class="shopping-card"> 
           <img class="shopping-image" :src="tech.productImage"> 
           <p class="shopping-name"> {{tech.productName}} </p>
+          <button @click="cartArray" class="addCart">{{button}}</button>
         </div>
       </div>
 
@@ -25,6 +24,7 @@
         <div v-for="clothes in clothing" :key="clothes.productId" class="shopping-card">
           <img class="shopping-image" :src="clothes.productImage"> 
           <p class="shopping-name"> {{clothes.productName}} </p>
+          <button @click="cartArray" class="addCart">{{button}}</button>
         </div>  
       </div>
 
@@ -32,6 +32,7 @@
         <div v-for="clothes in moreClothing" :key="clothes.productId" class="shopping-card">
           <img class="shopping-image" :src="clothes.productImage"> 
           <p class="shopping-name"  > {{clothes.productName}} </p>
+          <button @click="cartArray" class="addCart">{{button}}</button>
         </div>  
       </div>
     </div> 
@@ -47,6 +48,13 @@ export default {
   },
   data() {
     return {
+    button: 'Add to Cart',
+    shoppingItems: [
+      {
+
+      }
+      
+    ],
 
     technology: [
       {
@@ -101,13 +109,16 @@ export default {
       productImage: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80",
     },
     ],
-    isActive: false
+    active: false
   }
   },
   methods: {
-    toggleList: function(event) { 
-      let button = event.target
-      button.classList.toggle("show");
+    toggle() { 
+      this.active = !this.active
+    },
+
+    cartArray() {
+      console.log("hello");
     }
   }
 }
@@ -150,7 +161,7 @@ body{
 
 .item-container {
   display: flex;
-  height: 120vh;
+  height: 140vh;
   width: 100%;
   justify-content: space-evenly;
 
@@ -172,7 +183,7 @@ body{
 }
 
 .fa-shopping-cart {
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: white;
 }
 
@@ -183,12 +194,11 @@ body{
 }
 
 .cart-button {
-  margin-right: 2rem;
+  margin-right: 3rem;
   position: relative;
 }
 
 .shopping-list {
-  display: none;
   position: absolute;
   background-color: #f1f1f1;
   min-width: 25rem;
@@ -213,7 +223,17 @@ body{
   font-weight: bold;
 }
 
-.show {display:block;}
+
+.addCart {
+  background-color: orange;
+  font-size: 1.5rem;
+  margin: 0rem;
+  padding: 1rem 2.5rem;
+  color: black;
+  border-radius: 0.5rem;
+  border: none;
+
+}
 
 
 </style>
