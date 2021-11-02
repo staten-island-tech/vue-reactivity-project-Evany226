@@ -9,7 +9,6 @@
             </button>
       </div>
       
-
       <div class="cart-button">
           <div class="cart-items">
               <p class="cart-items-value">{{shoppingItems.length}}</p>
@@ -21,6 +20,8 @@
           </ul>
       </div>
     </nav>
+
+    <Slider />
 
 
     <div class="item-container">
@@ -48,15 +49,15 @@
         </div>  
       </div>
     </div> 
-
   </div>
 </template>
 
 <script>
-
+import Slider from "./components/Slider.vue";
 export default {
   name: 'App',
   components: {
+    Slider
   },
   data() {
     return {
