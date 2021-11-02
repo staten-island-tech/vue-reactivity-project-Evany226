@@ -241,6 +241,30 @@ body{
   border: none;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+
+.search-container {
+  display: flex;
+}
+
+#search-area {
+  width: 50vw;
+  height: 5vh;
+  font-size: 2rem;
+  padding-left: 1rem;
+}
+
+#submit-button{
+  background-color: orange;
+  
+}
+
+.fa-search {
+  font-size: 2rem;
+  padding: 0.65rem 0.2rem;
+>>>>>>> parent of 929fc06 (added items in cart)
 }
 =======
 
