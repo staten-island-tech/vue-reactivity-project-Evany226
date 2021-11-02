@@ -242,7 +242,10 @@ body{
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 929fc06 (added items in cart)
 
 
 .search-container {
