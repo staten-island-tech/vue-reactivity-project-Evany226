@@ -19,16 +19,6 @@
       </div>
     </nav>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of 49595d1 (c)
-=======
->>>>>>> parent of 49595d1 (c)
-
->>>>>>> parent of 49595d1 (c)
     <div class="item-container">
       <div class="shopping-container">
        <div v-for="tech in technology" :key="tech.productName" class="shopping-card"> 
@@ -59,23 +49,10 @@
 </template>
 
 <script>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-export default {
-  name: 'App',
-  components: {},
-=======
-=======
->>>>>>> parent of 49595d1 (c)
-=======
->>>>>>> parent of 49595d1 (c)
-
 export default {
   name: 'App',
   components: {
   },
->>>>>>> parent of 49595d1 (c)
   data() {
     return {
     button: 'Add to Cart',
