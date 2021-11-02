@@ -21,7 +21,10 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 49595d1 (c)
 =======
 >>>>>>> parent of 49595d1 (c)
 
@@ -58,10 +61,13 @@
 <script>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 export default {
   name: 'App',
   components: {},
 =======
+=======
+>>>>>>> parent of 49595d1 (c)
 =======
 >>>>>>> parent of 49595d1 (c)
 
