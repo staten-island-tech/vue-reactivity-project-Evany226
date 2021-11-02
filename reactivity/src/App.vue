@@ -11,6 +11,9 @@
       
 
       <div class="cart-button">
+          <div class="cart-items">
+              <p class="cart-items-value">{{shoppingItems.length}}</p>
+          </div>
           <i class="fas fa-shopping-cart" @click="toggle"></i>
           <ul class="shopping-list" v-if="active"> 
                 <li id="list-title">Shopping List</li>
@@ -23,24 +26,24 @@
     <div class="item-container">
       <div class="shopping-container">
        <div v-for="tech in technology" :key="tech.productName" class="shopping-card"> 
-          <img class="shopping-image" :src="tech.productImage"> 
-          <p class="shopping-name"> {{tech.productName}} </p>
+          <img class="shopping-container-image" :src="tech.productImage"> 
+          <p class="shopping-container-name"> {{tech.productName}} </p>
           <button @click="cartArray(tech)" class="addCart">{{button}}</button>
         </div>
       </div>
 
       <div class="shopping-container">
         <div v-for="clothes in clothing" :key="clothes.productName" class="shopping-card">
-          <img class="shopping-image" :src="clothes.productImage"> 
-          <p class="shopping-name"> {{clothes.productName}} </p>
+          <img class="shopping-container-image" :src="clothes.productImage"> 
+          <p class="shopping-container-name"> {{clothes.productName}} </p>
           <button @click="cartArray1(clothes)" class="addCart">{{button}}</button>
         </div>  
       </div>
 
       <div class="shopping-container">
         <div v-for="clothes in moreClothing" :key="clothes.productName" class="shopping-card">
-          <img class="shopping-image" :src="clothes.productImage"> 
-          <p class="shopping-name"  > {{clothes.productName}} </p>
+          <img class="shopping-container-image" :src="clothes.productImage"> 
+          <p class="shopping-container-name"  > {{clothes.productName}} </p>
           <button @click="cartArray2(clothes)" class="addCart">{{button}}</button>
         </div>  
       </div>
@@ -165,6 +168,7 @@ export default {
 * {
   font-size: 62.5%;
   box-sizing: border-box;
+  font-family: 'roboto', sans-serif;
 }
 
 body{
@@ -208,10 +212,15 @@ body{
 }
 
 
-.shopping-image {
+.shopping-container-image {
   width: 100%;
   height: 100%;
 
+}
+
+.shopping-container-name {
+  margin: 1rem 0rem;
+  font-size: 2.5rem;
 }
 
 .fa-shopping-cart {
@@ -219,15 +228,30 @@ body{
   color: white;
 }
 
-.shopping-name {
-  margin: 1rem 0rem;
-  font-family: 'Roboto', sans-serif;
-  font-size: 2.5rem;
+.fa-shopping-cart:hover{
+  color: #9EA5A8;
 }
 
 .cart-button {
   margin-right: 3rem;
   position: relative;
+}
+
+.cart-items{
+  position: absolute;
+  right: -1rem;
+  top: -0.8rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
+  background-color: orange;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-items-value{
+  font-size: 1.5rem;
 }
 
 .shopping-list {
@@ -239,7 +263,6 @@ body{
   right: 0.1rem;
   margin-top: 1rem;
 }
-
 
 .shopping-list li {
   color: black;
@@ -267,7 +290,9 @@ body{
   border: none;
 }
 
-
+.addCart:hover{
+  background-color: #C07C00;
+}
 
 .search-container {
   display: flex;
