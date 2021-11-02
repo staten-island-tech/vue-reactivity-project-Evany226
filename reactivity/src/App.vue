@@ -18,9 +18,6 @@
       </div>
     </nav>
 
-    <Slider />
-
-
     <div class="item-container">
       <div class="shopping-container">
        <div v-for="tech in technology" :key="tech.productName" class="shopping-card"> 
@@ -50,12 +47,9 @@
 </template>
 
 <script>
-import Slider from "./components/Slider.vue";
 export default {
   name: 'App',
-  components: {
-    Slider
-  },
+  components: {},
   data() {
     return {
     button: 'Add to Cart',
