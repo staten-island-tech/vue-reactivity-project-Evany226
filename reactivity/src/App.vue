@@ -240,7 +240,11 @@ body{
   border-radius: 0.5rem;
   border: none;
 
+<<<<<<< HEAD
 }
+=======
+
+>>>>>>> parent of 929fc06 (added items in cart)
 
 
 </style>
