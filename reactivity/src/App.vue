@@ -9,6 +9,7 @@
             </button>
       </div>
       
+
       <div class="cart-button">
           <i class="fas fa-shopping-cart" @click="toggle"></i>
           <ul class="shopping-list" v-if="active"> 
@@ -18,6 +19,10 @@
       </div>
     </nav>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 49595d1 (c)
     <div class="item-container">
       <div class="shopping-container">
        <div v-for="tech in technology" :key="tech.productName" class="shopping-card"> 
@@ -43,13 +48,22 @@
         </div>  
       </div>
     </div> 
+
   </div>
 </template>
 
 <script>
+<<<<<<< HEAD
 export default {
   name: 'App',
   components: {},
+=======
+
+export default {
+  name: 'App',
+  components: {
+  },
+>>>>>>> parent of 49595d1 (c)
   data() {
     return {
     button: 'Add to Cart',
