@@ -239,19 +239,7 @@ body{
   color: black;
   border-radius: 0.5rem;
   border: none;
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of 929fc06 (added items in cart)
-=======
->>>>>>> parent of 929fc06 (added items in cart)
-=======
->>>>>>> parent of 929fc06 (added items in cart)
+}
 
 
 .search-container {
@@ -273,11 +261,9 @@ body{
 .fa-search {
   font-size: 2rem;
   padding: 0.65rem 0.2rem;
->>>>>>> parent of 929fc06 (added items in cart)
 }
-=======
 
->>>>>>> parent of 929fc06 (added items in cart)
+
 
 
 </style>
