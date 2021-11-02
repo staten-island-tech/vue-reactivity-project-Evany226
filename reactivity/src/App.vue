@@ -20,7 +20,10 @@
     </nav>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 49595d1 (c)
 
 >>>>>>> parent of 49595d1 (c)
     <div class="item-container">
@@ -54,10 +57,13 @@
 
 <script>
 <<<<<<< HEAD
+<<<<<<< HEAD
 export default {
   name: 'App',
   components: {},
 =======
+=======
+>>>>>>> parent of 49595d1 (c)
 
 export default {
   name: 'App',
