@@ -1,38 +1,38 @@
 <template>
   <div id="app">
     <nav class="navbar">
-      <img class="logo" src="./assets/totally not amazon dark logo.jpg">
+      <img class="logo" src="./assets/amazon.jpg">
       <div class="cart-button">
           <i class="fas fa-shopping-cart" @click="toggle"></i>
         <ul class="shopping-list" v-if="active"> 
               <li id="list-title">Shopping List</li>
-              <li v-for="shop in shoppingItems" :key="shop.shoppingItems">Link 1</li>
+              <li>{{shoppingItems}}</li>
         </ul>
       </div>
     </nav>
 
     <div class="item-container">
       <div class="shopping-container">
-       <div v-for="tech in technology" :key="tech.productId" class="shopping-card"> 
+       <div v-for="tech in technology" :key="tech.productName" class="shopping-card"> 
           <img class="shopping-image" :src="tech.productImage"> 
           <p class="shopping-name"> {{tech.productName}} </p>
-          <button @click="cartArray" class="addCart">{{button}}</button>
+          <button @click="cartArray(tech)" class="addCart">{{button}}</button>
         </div>
       </div>
 
       <div class="shopping-container">
-        <div v-for="clothes in clothing" :key="clothes.productId" class="shopping-card">
+        <div v-for="clothes in clothing" :key="clothes.productName" class="shopping-card">
           <img class="shopping-image" :src="clothes.productImage"> 
           <p class="shopping-name"> {{clothes.productName}} </p>
-          <button @click="cartArray" class="addCart">{{button}}</button>
+          <button @click="cartArray1(clothes)" class="addCart">{{button}}</button>
         </div>  
       </div>
 
       <div class="shopping-container">
-        <div v-for="clothes in moreClothing" :key="clothes.productId" class="shopping-card">
+        <div v-for="clothes in moreClothing" :key="clothes.productName" class="shopping-card">
           <img class="shopping-image" :src="clothes.productImage"> 
           <p class="shopping-name"  > {{clothes.productName}} </p>
-          <button @click="cartArray" class="addCart">{{button}}</button>
+          <button @click="cartArray2(clothes)" class="addCart">{{button}}</button>
         </div>  
       </div>
     </div> 
@@ -49,13 +49,7 @@ export default {
   data() {
     return {
     button: 'Add to Cart',
-    shoppingItems: [
-      {
-
-      }
-      
-    ],
-
+    shoppingItems: [],
     technology: [
       {
       productId: 1,
@@ -112,14 +106,26 @@ export default {
     active: false
   }
   },
+  mounted: function(){
+  },
   methods: {
     toggle() { 
       this.active = !this.active
     },
 
-    cartArray() {
-      console.log("hello");
-    }
+    cartArray(tech) {
+      this.shoppingItems.push(tech.productName);
+    },
+
+    cartArray1(clothes) {
+      this.shoppingItems.push(clothes.productName);
+    },
+
+    cartArray2(clothes) {
+      this.shoppingItems.push(clothes.productName);
+    },
+
+    
   }
 }
 
@@ -144,6 +150,7 @@ body{
 
 .logo {
   width: 14rem;
+  padding: 1rem;
 }
 
 .navbar {
@@ -222,6 +229,7 @@ body{
   color: black;
   font-weight: bold;
 }
+
 
 
 .addCart {
