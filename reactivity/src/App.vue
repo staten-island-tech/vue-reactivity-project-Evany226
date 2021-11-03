@@ -18,6 +18,7 @@
           <ul class="shopping-list" v-if="active"> 
                 <li id="list-title">Shopping List</li>
                 <li v-for="(shop, index) in shoppingItems" :key="shop.productName">{{shoppingItems[(index)]}}</li>
+                <button class="clear-button" @click="clearCart">Remove All</button>
           </ul>
       </div>
     </nav>
@@ -150,7 +151,9 @@ export default {
       this.shoppingItems.push(clothes.productName);
     },
 
-    
+    clearCart() {
+      this.shoppingItems.splice(0);
+    }
   }
 }
 
@@ -253,6 +256,8 @@ body{
 }
 
 .shopping-list {
+    display: flex;
+  flex-direction: column;
   position: absolute;
   background-color: #f1f1f1;
   min-width: 25rem;
@@ -315,6 +320,15 @@ body{
   padding: 0.65rem 0.2rem;
 }
 
+.clear-button {
+  width: 15rem;
+  background-color: #EF514E;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+}
 
 
 
